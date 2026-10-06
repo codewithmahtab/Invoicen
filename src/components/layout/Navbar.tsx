@@ -18,21 +18,25 @@ const Navbar: FC = () => {
       <div className="z-10 flex justify-between items-center border-2 p-2 rounded-xl w-full min-h-[68px]">
         <div className="flex items-center gap-1 font-bold">
           <Link href={"/"}>
-            {/* Uses CSS dark mode class instead of JS — works before hydration */}
-            <Image
-              src={"/assets/logos/logo-light.svg"}
-              height={150}
-              width={150}
-              alt="logo"
-              className="block dark:hidden"
-            />
-            <Image
-              src={"/assets/logos/logo-dark.svg"}
-              height={150}
-              width={150}
-              alt="logo"
-              className="hidden dark:block"
-            />
+            {/* Fixed container — both images overlay each other, can never stack vertically */}
+            <span className="relative block h-[40px] w-[120px]">
+              <Image
+                src={"/assets/logos/logo-light.svg"}
+                fill
+                style={{ objectFit: "contain" }}
+                alt="logo"
+                className="block dark:hidden"
+                priority
+              />
+              <Image
+                src={"/assets/logos/logo-dark.svg"}
+                fill
+                style={{ objectFit: "contain" }}
+                alt="logo"
+                className="hidden dark:block"
+                priority
+              />
+            </span>
           </Link>
         </div>
         <div className="flex items-center">
