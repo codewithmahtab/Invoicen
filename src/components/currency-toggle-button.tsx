@@ -21,15 +21,14 @@ export function CurrencyToggleButton() {
       case Currency.INR:
         return <IndianRupee className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />;
       default:
-        <DollarSign className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />;
-        break;
+        return <DollarSign className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />;
     }
   }
   return (
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant={"outline"} className="mx-2">
+          <Button variant={"outline"} size="icon" className="mx-2">
             {getCurrencyLogo()}
             <span className="sr-only">Currency</span>
           </Button>

@@ -1,0 +1,6 @@
+allowBuilds:
+  '@biomejs/biome': true
+  sharp: true
+onlyBuiltDependencies:
+  - "@biomejs/biome"
+  - sharp
